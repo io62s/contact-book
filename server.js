@@ -6,6 +6,8 @@ const app = express();
 //connect to mongoDB
 connectDB();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.json({ msg: "Contact Book Home Page" });
 });
