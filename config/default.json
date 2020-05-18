@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://erebus:erebus62s@cluster0-mjyoy.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://erebus:erebus62s@cluster0-mjyoy.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
 }
