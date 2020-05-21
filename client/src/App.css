@@ -8,6 +8,11 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3448;
   --success-color: #39b54a;
+  /*************************/
+  --primary-color: #2f3241;
+  --darker-color: #2b2e3b;
+  --secondary-color: #9feaf9;
+  /*************************/
 }
 
 * {
@@ -20,8 +25,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--darker-color);
+  color: var(--light-color);
 }
 
 a {
@@ -402,25 +407,27 @@ table th {
   transition: opacity 1000ms ease-in;
 }
 /***************my custom classes******************/
+/*************************************************/
 .navbar {
-  background-color: var(--light-color);
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   border-bottom: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .navbar a {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-size: 1.2rem;
   font-weight: 400;
 }
 
 .navbar a:hover {
-  color: var(--dark-color);
+  color: var(--accent-color);
 }
 
 .navbar h1 {
   font-weight: 400;
+  color: var(--secondary-color);
 }
 .name-logo {
   display: flex;
@@ -432,7 +439,7 @@ table th {
   display: flex;
   justify-content: center;
   border-radius: 3px;
-  background-color: #dedede;
+  background-color: var(--accent-color);
   color: var(--dark-color);
 }
 /****************************************************/
