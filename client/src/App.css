@@ -3,6 +3,7 @@
 /* Global Styles */
 :root {
   --primary-color: #136cc2;
+  --accent-color: #fcde37;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3448;
@@ -374,10 +375,11 @@ table th {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
+  transition: 0.2s ease-out;
 }
 
 .navbar a:hover {
-  color: var(--light-color);
+  color: var(--accent-color);
 }
 
 .navbar .welcome span {
@@ -399,7 +401,27 @@ table th {
   opacity: 0;
   transition: opacity 1000ms ease-in;
 }
-/*my custom classes*/
+/***************my custom classes******************/
+.navbar {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  border-bottom: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.navbar a:hover {
+  color: var(--dark-color);
+}
+
+.navbar h1 {
+  font-weight: 400;
+}
 .name-logo {
   display: flex;
   align-items: center;
@@ -413,7 +435,7 @@ table th {
   background-color: #dedede;
   color: var(--dark-color);
 }
-
+/****************************************************/
 /* Mobile Styles */
 @media (max-width: 700px) {
   .hide-sm {

@@ -31,7 +31,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  title: "Contact Book",
+  title: "Contacts",
 };
 
 export default NavBar;
