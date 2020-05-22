@@ -4,10 +4,10 @@
 :root {
   --primary-color: #136cc2;
   --accent-color: #fcde37;
-  --dark-color: #333333;
+  --dark-color: #272727;
   --light-color: #f4f4f4;
-  --danger-color: #dc3448;
-  --success-color: #39b54a;
+  --danger-color: #e24053;
+  --success-color: #40c051;
   /*************************/
   --primary-color: #2f3241;
   --darker-color: #2b2e3b;
@@ -429,9 +429,20 @@ table th {
   font-weight: 400;
   color: var(--secondary-color);
 }
-.name-logo {
+/* .name-logo {
   display: flex;
   align-items: center;
+} */
+
+.navbar ul {
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-icon {
+  margin-right: 1rem;
 }
 
 .version {
@@ -481,5 +492,6 @@ table th {
   .navbar ul {
     text-align: center;
     justify-content: center;
+    margin: 0 auto;
   }
 }

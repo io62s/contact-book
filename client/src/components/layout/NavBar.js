@@ -1,17 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import logo from "../../logo/logo.png";
 
-function NavBar({ title }) {
+function NavBar({ title, icon }) {
   return (
     <div className="navbar bg-primary">
-      <h1 className="name-logo">
-        <img
-          src={logo}
-          alt="Contact book logo"
-          style={{ width: "50px", marginRight: "0.6rem" }}
-        />{" "}
+      <h1>
+        <i className={`${icon} logo-icon`}></i>
         {title}
       </h1>
       <ul>
@@ -28,10 +23,12 @@ function NavBar({ title }) {
 
 NavBar.propTypes = {
   title: PropTypes.string.isRequired,
+  icon: PropTypes.string,
 };
 
 NavBar.defaultProps = {
-  title: "Contacts",
+  title: "ContactBook",
+  icon: "fas fa-address-card",
 };
 
 export default NavBar;
