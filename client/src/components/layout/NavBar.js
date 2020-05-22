@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 function NavBar({ title, icon }) {
   return (
     <div className="navbar bg-primary">
-      <h1>
-        <i className={`${icon} logo-icon`}></i>
-        {title}
-      </h1>
+      <Link to="/">
+        <h1>
+          <i className={`${icon} logo-icon`}></i>
+          {title}
+        </h1>
+      </Link>
       <ul>
         <li>
           <Link to="/">Home</Link>
