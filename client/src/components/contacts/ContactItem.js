@@ -30,19 +30,21 @@ function ContactItem({ contact }) {
       <ul className="list">
         {email && (
           <li>
-            <i className="fas fa-envelope-open"></i> {email}
+            <i class="fas fa-envelope"></i> {email}
           </li>
         )}
         {phone && (
           <li>
-            <i className="fas fa-phone"></i> {phone}
+            <i class="fas fa-phone-alt"></i> {phone}
           </li>
         )}
       </ul>
       <p>
-        <button className="btn btn-dark btn-sm">Edit</button>
+        <button className="btn btn-edit btn-sm">
+          <i class="fas fa-edit"></i>
+        </button>
         <button className="btn btn-danger btn-sm" onClick={handleDelete}>
-          Delete
+          <i class="far fa-trash-alt"></i>
         </button>
       </p>
     </div>

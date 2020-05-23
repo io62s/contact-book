@@ -9,9 +9,9 @@
   --danger-color: #e24053;
   --success-color: #40c051;
   /*************************/
-  --primary-color: #2f3241;
-  --darker-color: #262935;
-  --secondary-color: #9feaf9;
+  --primary-color: #313342;
+  --darker-color: #242733;
+  --secondary-color: #91edff;
   --card-color: #42465c;
   /*************************/
 }
@@ -263,7 +263,7 @@ img {
 .bg-dark,
 .badge-dark,
 .alert-dark {
-  background: var(--primary-color);
+  background: var(--dark-color);
   color: #fff;
 }
 
@@ -326,8 +326,14 @@ textarea {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border-radius: 3px;
   border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  background-color: transparent;
+  color: var(--light-color);
+}
+
+input::placeholder {
+  color: var(--light-color);
 }
 
 input[type="submit"],
@@ -398,21 +404,6 @@ table th {
   margin-right: 0.6rem;
 }
 
-/* Animation (Add After) */
-.item-enter {
-  opacity: 0;
-}
-.item-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
-}
-.item-exit {
-  opacity: 1;
-}
-.item-exit-active {
-  opacity: 0;
-  transition: opacity 1000ms ease-in;
-}
 /***************my custom classes******************/
 /*************************************************/
 .navbar {
@@ -453,16 +444,9 @@ table th {
   display: flex;
   justify-content: center;
   border-radius: 3px;
-  background-color: var(--accent-color);
-  color: var(--dark-color);
+  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
-
-/* .contacts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 1rem;
-  margin-bottom: 2rem;
-} */
 
 .card {
   position: relative;
@@ -471,7 +455,7 @@ table th {
   border-radius: 3px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: var(--card-color);
+  background-color: var(--primary-color);
   color: var(--light-color);
   /* margin: 0; */
 }
@@ -518,11 +502,17 @@ form h5 {
 }
 input[type="radio"] {
   margin-right: 0.3rem;
+  cursor: pointer;
 }
 
-input[type="radio"]:checked {
-  box-shadow: 1px 1px 0px var(--secondary-color),
-    -1px -1px 0px var(--secondary-color);
+.fa-envelope,
+.fa-phone-alt {
+  color: var(--secondary-color);
+}
+
+.btn-edit {
+  background-color: var(--card-color);
+  color: var(--light-color);
 }
 
 /****************************************************/
