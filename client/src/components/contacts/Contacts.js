@@ -7,11 +7,11 @@ function Contacts() {
   const { contacts } = contactsContext;
 
   return (
-    <Fragment>
+    <div className="contacts-grid">
       {contacts.map((contact) => (
         <ContactItem key={contact.id} contact={contact} />
       ))}
-    </Fragment>
+    </div>
   );
 }
 
