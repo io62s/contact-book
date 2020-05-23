@@ -49,7 +49,7 @@ img {
 
 /* Utilities */
 .container {
-  max-width: 1600px;
+  max-width: 1200px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
@@ -457,12 +457,12 @@ table th {
   color: var(--dark-color);
 }
 
-.contacts-grid {
+/* .contacts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 1rem;
   margin-bottom: 2rem;
-}
+} */
 
 .card {
   position: relative;
@@ -473,7 +473,7 @@ table th {
   border-bottom-left-radius: 0;
   background-color: var(--card-color);
   color: var(--light-color);
-  margin: 0;
+  /* margin: 0; */
 }
 
 .prof-card {
@@ -503,7 +503,11 @@ table th {
   width: 500px;
   margin: 0 auto;
 }
-
+form h5 {
+  font-weight: 300;
+  border-bottom: 1px solid var(--card-color);
+  padding: 0.5rem 0;
+}
 .add-contact {
   background-color: var(--secondary-color);
   border-radius: 3px;
@@ -512,10 +516,23 @@ table th {
 .radio-pers {
   margin-right: 0.5rem;
 }
+input[type="radio"] {
+  margin-right: 0.3rem;
+}
+
+input[type="radio"]:checked {
+  box-shadow: 1px 1px 0px var(--secondary-color),
+    -1px -1px 0px var(--secondary-color);
+}
 
 /****************************************************/
 /* Mobile Styles */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .form-wrapp {
+    width: 300px;
+  }
+}
+@media (max-width: 700px) {
   .hide-sm {
     display: none;
   }
@@ -553,9 +570,5 @@ table th {
     text-align: center;
     justify-content: center;
     margin: 0 auto;
-  }
-
-  .form-wrapp {
-    width: 300px;
   }
 }
