@@ -6,10 +6,10 @@ function NavBar({ title, icon }) {
   return (
     <div className="navbar bg-primary">
       <Link to="/">
-        <h1>
+        <h2>
           <i className={`${icon} logo-icon`}></i>
           {title}
-        </h1>
+        </h2>
       </Link>
       <ul>
         <li>

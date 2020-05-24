@@ -3,16 +3,16 @@
 /* Global Styles */
 :root {
   --primary-color: #136cc2;
-  --accent-color: #fcde37;
   --dark-color: #272727;
   --light-color: #f4f4f4;
   --danger-color: #e24053;
-  --success-color: #40c051;
+  --success-color: #47d486;
   /*************************/
-  --primary-color: #313342;
-  --darker-color: #242733;
-  --secondary-color: #91edff;
-  --card-color: #42465c;
+  --primary-color: #343542;
+  --darker-color: #262933;
+  --secondary-color: #9feaf9;
+  --accent-color: #fcde37;
+  --card-color: #474b5f;
   /*************************/
 }
 
@@ -203,7 +203,7 @@ img {
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
+  transition: all 0.2s ease-out;
   outline: none;
 }
 
@@ -292,9 +292,9 @@ img {
   border: #ccc solid 1px;
 }
 
-.btn:hover {
+/* .btn:hover {
   opacity: 0.8;
-}
+} */
 
 .bg-light,
 .badge-light {
@@ -420,10 +420,10 @@ table th {
 }
 
 .navbar a:hover {
-  color: var(--accent-color);
+  color: var(--light-color);
 }
 
-.navbar h1 {
+.navbar h2 {
   font-weight: 400;
   color: var(--secondary-color);
 }
@@ -451,18 +451,47 @@ table th {
 .card {
   position: relative;
   border: none;
-  border-left: 2px solid var(--accent-color);
+  border-left: 2px solid var(--secondary-color);
   border-radius: 3px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   background-color: var(--primary-color);
   color: var(--light-color);
-  /* margin: 0; */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-out;
+
+  /***********************/
+  height: 60px;
+  overflow: hidden;
+  /***********************/
 }
 
-.prof-card {
-  border-left: 2px solid var(--secondary-color);
+.chevron {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
 }
+
+.expand {
+  height: 180px;
+  overflow: unset;
+}
+
+.contact-name {
+  margin-bottom: 1rem;
+}
+
+/*professional type contact card left border color*/
+.prof-card {
+  border-left: 2px solid var(--accent-color);
+}
+/********************************************/
 
 .card h3 {
   color: var(--light-color);
@@ -476,11 +505,11 @@ table th {
 
 .badge-primary {
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--secondary-color);
 }
 .badge-prof {
   background-color: transparent;
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 .form-wrapp {
@@ -493,8 +522,15 @@ form h5 {
   padding: 0.5rem 0;
 }
 .add-contact {
-  background-color: var(--secondary-color);
   border-radius: 3px;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  color: var(--darker-color);
+}
+
+.add-contact:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .radio-pers {
@@ -504,15 +540,63 @@ input[type="radio"] {
   margin-right: 0.3rem;
   cursor: pointer;
 }
+input[type="submit"] {
+  font-weight: 600;
+}
+
+.filter-name {
+  margin-top: 0.5rem;
+}
+label {
+  color: var(--secondary-color);
+}
+
+.select-contact-type {
+  margin-bottom: 2rem;
+}
+
+.select-contact-type option {
+  color: var(--darker-color);
+  background-color: var(--secondary-color);
+}
 
 .fa-envelope,
 .fa-phone-alt {
   color: var(--secondary-color);
 }
 
-.btn-edit {
-  background-color: var(--card-color);
+.btn-edit,
+.btn-delete {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
   color: var(--light-color);
+}
+.btn-delete {
+  border: 1px solid var(--danger-color);
+}
+
+.btn-delete:hover {
+  background-color: var(--danger-color);
+}
+.btn-delete i {
+  color: var(--danger-color);
+}
+
+.btn-delete:hover i {
+  color: var(--light-color);
+}
+
+.btn-edit:hover {
+  background-color: var(--secondary-color);
+  color: var(--darker-color);
+}
+
+.btn-edit i {
+  color: var(--secondary-color);
+}
+
+.btn-edit:hover i {
+  color: var(--darker-color);
 }
 
 /****************************************************/

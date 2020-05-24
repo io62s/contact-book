@@ -9,8 +9,6 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_CONTACT,
-  FILTER_CONTACTS,
-  CLEAR_FILTER,
 } from "../types";
 
 function ContactState(props) {
