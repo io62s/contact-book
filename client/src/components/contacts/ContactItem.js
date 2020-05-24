@@ -39,26 +39,28 @@ function ContactItem({ contact }) {
           {type.charAt(0).toUpperCase() + type.slice(1)}
         </span>
       </h3>
-      <ul className="list">
-        {email && (
-          <li>
-            <i className="fas fa-envelope"></i> {email}
-          </li>
-        )}
-        {phone && (
-          <li>
-            <i className="fas fa-phone-alt"></i> {phone}
-          </li>
-        )}
-      </ul>
-      <p>
-        <button className="btn btn-edit btn-sm">
-          <i className="fas fa-edit"></i>
-        </button>
-        <button className="btn btn-delete btn-sm" onClick={handleDelete}>
-          <i className="far fa-trash-alt"></i>
-        </button>
-      </p>
+      <div className={`list-container ${expand ? "fade-in" : ""}`}>
+        <ul className="list">
+          {email && (
+            <li>
+              <i className="fas fa-envelope"></i> {email}
+            </li>
+          )}
+          {phone && (
+            <li>
+              <i className="fas fa-phone-alt"></i> {phone}
+            </li>
+          )}
+        </ul>
+        <p>
+          <button className="btn btn-edit btn-sm">
+            <i className="fas fa-edit"></i>
+          </button>
+          <button className="btn btn-delete btn-sm" onClick={handleDelete}>
+            <i className="far fa-trash-alt"></i>
+          </button>
+        </p>
+      </div>
       <button className="chevron" onClick={handleExpandCard}>
         {expand ? (
           <i className="fas fa-caret-up"></i>

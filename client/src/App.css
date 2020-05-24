@@ -410,6 +410,7 @@ table th {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-bottom: none;
+  margin-bottom: 3rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -467,8 +468,9 @@ table th {
 }
 
 .chevron {
+  width: 30px;
   position: absolute;
-  right: 1rem;
+  right: 0.5rem;
   bottom: 0;
   cursor: pointer;
   background-color: transparent;
@@ -480,11 +482,21 @@ table th {
 
 .expand {
   height: 180px;
-  overflow: unset;
+  overflow: visible;
 }
 
 .contact-name {
   margin-bottom: 1rem;
+}
+
+.list-container {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  transition-delay: 0.2s;
+}
+
+.fade-in {
+  opacity: 1;
 }
 
 /*professional type contact card left border color*/
