@@ -3,7 +3,7 @@ import React from "react";
 function FilterForm({
   type,
   name,
-  sortByName,
+  isSorted,
   handleNameChange,
   handleSelect,
   sortContacts,
@@ -37,12 +37,12 @@ function FilterForm({
           <label htmlFor="type">Sort contacts:</label>
           <select
             className="select-contact-type"
-            name="sortByName"
-            value={sortByName}
+            name="isSorted"
+            value={isSorted}
             onChange={sortContacts}
           >
-            <option value={true}>A-Z</option>
-            <option value={false}>Z-A</option>
+            <option value="desc">a-z</option>
+            <option value="asc">z-a</option>
           </select>
         </div>
       </div>

@@ -35,20 +35,6 @@ function ContactState(props) {
         phone: "666-888",
         type: "professional",
       },
-      {
-        id: 4,
-        name: "An Io",
-        email: "io@mail.com",
-        phone: "555-333",
-        type: "professional",
-      },
-      {
-        id: 5,
-        name: "Duki Mazza",
-        email: "dooka@mail.com",
-        phone: "666-333",
-        type: "personal",
-      },
     ],
     current: null,
   };

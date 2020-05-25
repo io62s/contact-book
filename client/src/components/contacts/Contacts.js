@@ -9,7 +9,7 @@ function Contacts() {
 
   const [type, setType] = useState("all");
   const [name, setName] = useState("");
-  const [sortByName, setSortByName] = useState(true);
+  const [isSorted, setIsSorted] = useState("desc");
 
   const handleSelect = (e) => {
     setType(e.target.value);
@@ -19,13 +19,13 @@ function Contacts() {
     setName(e.target.value);
   };
 
-  const sortContacts = () => {
-    setSortByName(!sortByName);
+  const sortContacts = (e) => {
+    setIsSorted(e.target.value);
   };
 
-  const filteredContacts = contacts
+  const sortFilterContacts = contacts
     .sort((a, b) =>
-      sortByName
+      isSorted === "desc"
         ? a.name.toLowerCase() > b.name.toLowerCase()
         : a.name.toLowerCase() < b.name.toLowerCase()
     )
@@ -42,16 +42,16 @@ function Contacts() {
       <FilterForm
         type={type}
         name={name}
-        sortByName={sortByName}
+        isSorted={isSorted}
         handleNameChange={handleNameChange}
         handleSelect={handleSelect}
         sortContacts={sortContacts}
       />
       {type === "all"
-        ? filteredContacts.map((contact) => (
+        ? sortFilterContacts.map((contact) => (
             <ContactItem key={contact.id} contact={contact} />
           ))
-        : filteredContacts.map((contact) =>
+        : sortFilterContacts.map((contact) =>
             contact.type === type ? (
               <ContactItem key={contact.id} contact={contact} />
             ) : null
