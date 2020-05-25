@@ -1,6 +1,13 @@
 import React from "react";
 
-function FilterForm({ type, name, handleNameChange, handleSelect }) {
+function FilterForm({
+  type,
+  name,
+  sortByName,
+  handleNameChange,
+  handleSelect,
+  sortContacts,
+}) {
   return (
     <React.Fragment>
       <label htmlFor="type">Filter by Name:</label>
@@ -12,17 +19,39 @@ function FilterForm({ type, name, handleNameChange, handleSelect }) {
         placeholder="Name"
         onChange={handleNameChange}
       />
-      <label htmlFor="type">Select contacts by type:</label>
-      <select
-        className="select-contact-type"
-        name="type"
-        value={type}
-        onChange={handleSelect}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridGap: "1rem",
+        }}
       >
-        <option value="all">All</option>
-        <option value="personal">Personal</option>
-        <option value="professional">Professional</option>
-      </select>
+        <div>
+          <label htmlFor="type">Select by type:</label>
+          <select
+            className="select-contact-type"
+            name="type"
+            value={type}
+            onChange={handleSelect}
+          >
+            <option value="all">All</option>
+            <option value="personal">Personal</option>
+            <option value="professional">Professional</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="type">Sort contacts:</label>
+          <select
+            className="select-contact-type"
+            name="sortByName"
+            value={sortByName}
+            onChange={sortContacts}
+          >
+            <option value={true}>A-Z</option>
+            <option value={false}>Z-A</option>
+          </select>
+        </div>
+      </div>
     </React.Fragment>
   );
 }

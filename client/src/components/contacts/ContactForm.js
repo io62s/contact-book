@@ -30,8 +30,8 @@ function ContactForm() {
 
     clearAll();
   };
+
   useEffect(() => {
-    console.log("effect called");
     if (current !== null) {
       setContact(current);
     } else {

@@ -9,6 +9,7 @@ function Contacts() {
 
   const [type, setType] = useState("all");
   const [name, setName] = useState("");
+  const [sortByName, setSortByName] = useState(true);
 
   const handleSelect = (e) => {
     setType(e.target.value);
@@ -18,9 +19,19 @@ function Contacts() {
     setName(e.target.value);
   };
 
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(name.toLowerCase())
-  );
+  const sortContacts = () => {
+    setSortByName(!sortByName);
+  };
+
+  const filteredContacts = contacts
+    .sort((a, b) =>
+      sortByName
+        ? a.name.toLowerCase() > b.name.toLowerCase()
+        : a.name.toLowerCase() < b.name.toLowerCase()
+    )
+    .filter((contact) =>
+      contact.name.toLowerCase().includes(name.toLowerCase())
+    );
 
   if (contacts.length === 0) {
     return <h3>Please Add a Contact</h3>;
@@ -31,8 +42,10 @@ function Contacts() {
       <FilterForm
         type={type}
         name={name}
+        sortByName={sortByName}
         handleNameChange={handleNameChange}
         handleSelect={handleSelect}
+        sortContacts={sortContacts}
       />
       {type === "all"
         ? filteredContacts.map((contact) => (
