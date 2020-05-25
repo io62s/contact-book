@@ -586,6 +586,12 @@ label {
   background-color: var(--primary-color);
 }
 
+.select-inputs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 1rem;
+}
+
 .fa-envelope,
 .fa-phone-alt {
   color: var(--secondary-color);

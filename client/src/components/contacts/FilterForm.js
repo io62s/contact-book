@@ -19,13 +19,7 @@ function FilterForm({
         placeholder="Name"
         onChange={handleNameChange}
       />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gridGap: "1rem",
-        }}
-      >
+      <div className="select-inputs-container">
         <div>
           <label htmlFor="type">Select by type:</label>
           <select
