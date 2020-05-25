@@ -30,7 +30,7 @@ NavBar.propTypes = {
 
 NavBar.defaultProps = {
   title: "ContactBook",
-  icon: "fas fa-address-card",
+  icon: "far fa-address-book",
 };
 
 export default NavBar;

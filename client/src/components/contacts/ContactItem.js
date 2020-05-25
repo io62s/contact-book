@@ -6,54 +6,67 @@ import ContactContext from "../../context/contact/contactContext";
 function ContactItem({ contact }) {
   const contactContext = useContext(ContactContext);
 
-  const { deleteContact } = contactContext;
+  const { deleteContact, setCurrent, clearCurrent } = contactContext;
   const { id, name, email, phone, type } = contact;
 
-  const [expand, setExpand] = useState(false);
+  const [expandCard, setExpandCard] = useState(false);
 
   const cardFadeIn = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   const handleDelete = () => {
     deleteContact(id);
+    clearCurrent();
   };
 
   const handleExpandCard = () => {
-    setExpand(!expand);
+    setExpandCard(!expandCard);
+  };
+
+  const handleSetCurrent = () => {
+    setCurrent(contact);
   };
 
   return (
     <animated.div
       style={cardFadeIn}
-      className={`card ${type === "professional" ? "prof-card" : ""} ${
-        expand ? "expand" : ""
-      }`}
+      className={`card ${
+        type === "professional" ? "prof-card" : "prsnl-card"
+      } ${expandCard ? "expand" : ""}`}
     >
       <h3 className="text-primary text-left contact-name">
         {name}{" "}
         <span
           style={{ float: "right" }}
           className={`badge ${
-            type === "professional" ? "badge-prof" : "badge-primary"
+            type === "professional" ? "badge-prof" : "badge-prsnl"
           }`}
         >
           {type.charAt(0).toUpperCase() + type.slice(1)}
         </span>
       </h3>
-      <div className={`list-container ${expand ? "fade-in" : ""}`}>
+      <div className={`list-container ${expandCard ? "fade-in" : ""}`}>
         <ul className="list">
           {email && (
             <li>
-              <i className="fas fa-envelope"></i> {email}
+              <i
+                style={{ marginRight: ".4rem" }}
+                className="fas fa-envelope"
+              ></i>{" "}
+              {email}
             </li>
           )}
           {phone && (
             <li>
-              <i className="fas fa-phone-alt"></i> {phone}
+              <i
+                style={{ marginRight: ".5rem" }}
+                className="fas fa-phone-alt"
+              ></i>{" "}
+              {phone}
             </li>
           )}
         </ul>
         <p>
-          <button className="btn btn-edit btn-sm">
+          <button className="btn btn-edit btn-sm" onClick={handleSetCurrent}>
             <i className="fas fa-edit"></i>
           </button>
           <button className="btn btn-delete btn-sm" onClick={handleDelete}>
@@ -62,10 +75,10 @@ function ContactItem({ contact }) {
         </p>
       </div>
       <button className="chevron" onClick={handleExpandCard}>
-        {expand ? (
-          <i className="fas fa-caret-up"></i>
+        {expandCard ? (
+          <i className="fas fa-angle-up"></i>
         ) : (
-          <i className="fas fa-caret-down"></i>
+          <i className="fas fa-angle-down"></i>
         )}
       </button>
     </animated.div>

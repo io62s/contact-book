@@ -4,14 +4,15 @@
 :root {
   --primary-color: #136cc2;
   --dark-color: #272727;
-  --light-color: #f4f4f4;
+  --light-color: #ededed;
   --danger-color: #e24053;
   --success-color: #47d486;
   /*************************/
   --primary-color: #343542;
   --darker-color: #262933;
-  --secondary-color: #9feaf9;
-  --accent-color: #fcde37;
+  --secondary-color: #90e3fc;
+  --accent-color: #fae545;
+  --personal-color: #9da3ff;
   --card-color: #474b5f;
   /*************************/
 }
@@ -404,6 +405,7 @@ table th {
   margin-right: 0.6rem;
 }
 
+/*************************************************/
 /***************my custom classes******************/
 /*************************************************/
 .navbar {
@@ -476,7 +478,7 @@ table th {
   background-color: transparent;
   border: none;
   outline: none;
-  color: var(--secondary-color);
+  color: var(--light-color);
   font-size: 1.2rem;
 }
 
@@ -499,9 +501,12 @@ table th {
   opacity: 1;
 }
 
-/*professional type contact card left border color*/
+/*professional,personal type contact card left border color*/
 .prof-card {
   border-left: 2px solid var(--accent-color);
+}
+.prsnl-card {
+  border-left: 2px solid var(--secondary-color);
 }
 /********************************************/
 
@@ -515,13 +520,16 @@ table th {
   top: 0;
 }
 
-.badge-primary {
+.badge-primary,
+.badge-prof,
+.badge-prsnl {
   background-color: transparent;
-  color: var(--secondary-color);
 }
 .badge-prof {
-  background-color: transparent;
   color: var(--accent-color);
+}
+.badge-prsnl {
+  color: var(--secondary-color);
 }
 
 .form-wrapp {
@@ -533,16 +541,19 @@ form h5 {
   border-bottom: 1px solid var(--card-color);
   padding: 0.5rem 0;
 }
+.add-form-heading {
+  color: var(--secondary-color);
+}
 .add-contact {
   border-radius: 3px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border: 2px solid var(--secondary-color);
-  color: var(--darker-color);
+  color: var(--secondary-color);
 }
 
 .add-contact:hover {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--darker-color);
 }
 
 .radio-pers {
@@ -551,6 +562,9 @@ form h5 {
 input[type="radio"] {
   margin-right: 0.3rem;
   cursor: pointer;
+}
+input[type="radio"]:checked {
+  box-shadow: 0 0 0px 1px var(--secondary-color);
 }
 input[type="submit"] {
   font-weight: 600;
@@ -568,8 +582,8 @@ label {
 }
 
 .select-contact-type option {
-  color: var(--darker-color);
-  background-color: var(--secondary-color);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 .fa-envelope,
@@ -611,6 +625,7 @@ label {
   color: var(--darker-color);
 }
 
+/****************************************************/
 /****************************************************/
 /* Mobile Styles */
 @media (max-width: 900px) {
@@ -656,5 +671,11 @@ label {
     text-align: center;
     justify-content: center;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    padding: 1rem 0;
   }
 }
