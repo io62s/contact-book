@@ -70,24 +70,16 @@ function ContactForm() {
         value={phone}
         onChange={handleChange}
       />
-      <h5>Contact Type</h5>
-      <input
-        type="radio"
+      <label htmlFor="type">Contact type:</label>
+      <select
+        className="select-contact-type"
         name="type"
-        value="personal"
-        checked={type === "personal"}
+        value={type}
         onChange={handleChange}
-      />
-      <span className="radio-pers">Personal</span>
-      <input
-        className="prof-radio-input"
-        type="radio"
-        name="type"
-        value="professional"
-        checked={type === "professional"}
-        onChange={handleChange}
-      />
-      Professional
+      >
+        <option value="personal">Personal</option>
+        <option value="professional">Professional</option>
+      </select>
       <div>
         <input
           type="submit"
