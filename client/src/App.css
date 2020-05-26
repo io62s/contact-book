@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 
 /* Global Styles */
 :root {
@@ -12,7 +12,7 @@
   --darker-color: #262933;
   --secondary-color: #90e3fc;
   --accent-color: #fae545;
-  --personal-color: #9da3ff;
+  --personal-color: #90e3fc;
   --card-color: #474b5f;
   /*************************/
 }
@@ -106,7 +106,7 @@ img {
 .card {
   padding: 1rem;
   border: #ccc 1px dotted;
-  margin: 1rem 0;
+  margin: 1.3rem 0;
 }
 
 /* List */
@@ -231,9 +231,8 @@ img {
   padding: 0.3rem 0.7rem;
   text-align: center;
   margin: 0.3rem;
-  background: var(--light-color);
-  color: #333;
   border-radius: 3px;
+  font-weight: 600;
 }
 
 .alert {
@@ -292,10 +291,6 @@ img {
   color: #333;
   border: #ccc solid 1px;
 }
-
-/* .btn:hover {
-  opacity: 0.8;
-} */
 
 .bg-light,
 .badge-light {
@@ -506,7 +501,7 @@ table th {
   border-left: 2px solid var(--accent-color);
 }
 .prsnl-card {
-  border-left: 2px solid var(--secondary-color);
+  border-left: 2px solid var(--personal-color);
 }
 /********************************************/
 
@@ -529,7 +524,7 @@ table th {
   color: var(--accent-color);
 }
 .badge-prsnl {
-  color: var(--secondary-color);
+  color: var(--personal-color);
 }
 
 .form-wrapp {
@@ -559,17 +554,21 @@ form h5 {
 .radio-pers {
   margin-right: 0.5rem;
 }
+
 input[type="radio"] {
   margin-right: 0.3rem;
   cursor: pointer;
 }
-input[type="radio"]:checked {
+input[value="personal"]:checked {
   box-shadow: 0 0 0px 1px var(--secondary-color);
 }
+input[value="professional"]:checked {
+  box-shadow: 0 0 0px 1px var(--accent-color);
+}
+
 input[type="submit"] {
   font-weight: 600;
 }
-
 .filter-name {
   margin-top: 0.5rem;
 }

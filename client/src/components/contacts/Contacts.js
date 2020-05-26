@@ -24,12 +24,21 @@ function Contacts() {
     setIsSorted(e.target.value);
   };
 
+  //check if browser is chrome
+  // const isChrome =
+  //   !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+  // console.log("check is chrome", isChrome);
+
   const sortFilterContacts = contacts
-    .sort((a, b) =>
-      isSorted === "desc"
-        ? a.name.toLowerCase() > b.name.toLowerCase()
-        : a.name.toLowerCase() < b.name.toLowerCase()
-    )
+    .sort(function (a, b) {
+      return isSorted === "desc"
+        ? b.name.toLowerCase() < a.name.toLowerCase()
+          ? 1
+          : -1
+        : a.name.toLowerCase() > b.name.toLowerCase()
+        ? -1
+        : 1;
+    })
     .filter((contact) =>
       contact.name.toLowerCase().includes(name.toLowerCase())
     );
@@ -51,13 +60,13 @@ function Contacts() {
       <TransitionGroup>
         {type === "all"
           ? sortFilterContacts.map((contact) => (
-              <CSSTransition key={contact.id} timeout={500} classNames="item">
+              <CSSTransition key={contact.id} timeout={300} classNames="item">
                 <ContactItem contact={contact} />
               </CSSTransition>
             ))
           : sortFilterContacts.map((contact) =>
               contact.type === type ? (
-                <CSSTransition key={contact.id} timeout={500} classNames="item">
+                <CSSTransition key={contact.id} timeout={300} classNames="item">
                   <ContactItem contact={contact} />
                 </CSSTransition>
               ) : null

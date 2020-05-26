@@ -80,6 +80,7 @@ function ContactForm() {
       />
       <span className="radio-pers">Personal</span>
       <input
+        className="prof-radio-input"
         type="radio"
         name="type"
         value="professional"

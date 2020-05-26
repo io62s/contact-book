@@ -29,17 +29,15 @@ function ContactItem({ contact }) {
         type === "professional" ? "prof-card" : "prsnl-card"
       } ${expandCard ? "expand" : ""}`}
     >
-      <h3 className="text-primary text-left contact-name">
-        {name}{" "}
-        <span
-          style={{ float: "right" }}
-          className={`badge ${
-            type === "professional" ? "badge-prof" : "badge-prsnl"
-          }`}
-        >
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </span>
-      </h3>
+      <h3 className="text-primary text-left contact-name">{name} </h3>
+      <span
+        style={{ float: "right" }}
+        className={`badge ${
+          type === "professional" ? "badge-prof" : "badge-prsnl"
+        }`}
+      >
+        {type.charAt(0).toUpperCase() + type.slice(1)}
+      </span>
       <div className={`list-container ${expandCard ? "fade-in" : ""}`}>
         <ul className="list">
           {email && (
