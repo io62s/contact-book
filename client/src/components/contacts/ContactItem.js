@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { useSpring, animated } from "react-spring";
 import PropTypes from "prop-types";
 import ContactContext from "../../context/contact/contactContext";
 
@@ -10,8 +9,6 @@ function ContactItem({ contact }) {
   const { id, name, email, phone, type } = contact;
 
   const [expandCard, setExpandCard] = useState(false);
-
-  const cardFadeIn = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   const handleDelete = () => {
     deleteContact(id);
@@ -27,8 +24,7 @@ function ContactItem({ contact }) {
   };
 
   return (
-    <animated.div
-      style={cardFadeIn}
+    <div
       className={`card ${
         type === "professional" ? "prof-card" : "prsnl-card"
       } ${expandCard ? "expand" : ""}`}
@@ -81,7 +77,7 @@ function ContactItem({ contact }) {
           <i className="fas fa-angle-down"></i>
         )}
       </button>
-    </animated.div>
+    </div>
   );
 }
 

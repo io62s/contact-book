@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import ContactContext from "../../context/contact/contactContext";
 import ContactItem from "./ContactItem";
 import FilterForm from "./FilterForm";
@@ -47,15 +48,21 @@ function Contacts() {
         handleSelect={handleSelect}
         sortContacts={sortContacts}
       />
-      {type === "all"
-        ? sortFilterContacts.map((contact) => (
-            <ContactItem key={contact.id} contact={contact} />
-          ))
-        : sortFilterContacts.map((contact) =>
-            contact.type === type ? (
-              <ContactItem key={contact.id} contact={contact} />
-            ) : null
-          )}
+      <TransitionGroup>
+        {type === "all"
+          ? sortFilterContacts.map((contact) => (
+              <CSSTransition key={contact.id} timeout={500} classNames="item">
+                <ContactItem contact={contact} />
+              </CSSTransition>
+            ))
+          : sortFilterContacts.map((contact) =>
+              contact.type === type ? (
+                <CSSTransition key={contact.id} timeout={500} classNames="item">
+                  <ContactItem contact={contact} />
+                </CSSTransition>
+              ) : null
+            )}
+      </TransitionGroup>
     </div>
   );
 }

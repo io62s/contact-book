@@ -600,8 +600,10 @@ label {
 .btn-edit,
 .btn-delete {
   background-color: transparent;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--light-color);
   color: var(--light-color);
+  padding: 5px 10px;
+  font-size: 0.8rem;
 }
 .btn-delete {
   border: 1px solid var(--danger-color);
@@ -619,17 +621,38 @@ label {
 }
 
 .btn-edit:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--light-color);
   color: var(--darker-color);
 }
 
 .btn-edit i {
-  color: var(--secondary-color);
+  color: var(--light-color);
 }
 
 .btn-edit:hover i {
   color: var(--darker-color);
 }
+
+/**************TRANSITIONGROUP ANIMATION**************/
+.item-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.item-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.5s ease-out;
+}
+.item-exit {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.item-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease-out;
+}
+/****************************************************/
 
 /****************************************************/
 /****************************************************/
