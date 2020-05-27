@@ -41,8 +41,8 @@ function FilterForm({
             value={isSorted}
             onChange={sortContacts}
           >
-            <option value="desc">a-z</option>
-            <option value="asc">z-a</option>
+            <option value="desc">A - Z</option>
+            <option value="asc">Z - A</option>
           </select>
         </div>
       </div>

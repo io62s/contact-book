@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 /* Global Styles */
 :root {
   --light-color: #ededed;
   --danger-color: #e24053;
   --success-color: #47d486;
-  --primary-color: #343542;
-  --darker-color: #262933;
-  --secondary-color: #90e3fc;
-  --accent-color: #fae545;
-  --personal-color: #90e3fc;
+  --primary-color: #35353b;
+  --darker-color: #242429;
+  --secondary-color: #ededed;
+  --accent-color: #ffdb64;
+  --personal-color: #6ddcfd;
   /*************************/
 }
 
@@ -21,7 +21,7 @@
 
 body {
   min-height: 100vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: var(--darker-color);
@@ -264,7 +264,7 @@ textarea {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: none;
-  border-bottom: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--light-color);
   background-color: transparent;
   color: var(--light-color);
 }
@@ -319,7 +319,7 @@ h3 {
 }
 
 .navbar a {
-  color: var(--secondary-color);
+  color: var(--personal-color);
   font-size: 1.2rem;
   font-weight: 400;
   padding: 0.45rem;
@@ -444,52 +444,39 @@ h3 {
   margin: 0 auto;
 }
 .add-form-heading {
-  color: var(--light-color);
+  color: var(--personal-color);
+  font-weight: 400;
 }
 .add-contact {
   border-radius: 3px;
   background-color: var(--primary-color);
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
+  border: 1px solid var(--personal-color);
+  color: var(--personal-color);
+  font-weight: 400;
 }
 
 .add-contact:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--personal-color);
   color: var(--darker-color);
 }
 
-.radio-pers {
-  margin-right: 0.5rem;
-}
-
-input[type="radio"] {
-  margin-right: 0.3rem;
-  cursor: pointer;
-}
-input[value="personal"]:checked {
-  box-shadow: 0 0 0px 1px var(--secondary-color);
-}
-input[value="professional"]:checked {
-  box-shadow: 0 0 0px 1px var(--accent-color);
-}
-
 input[type="submit"] {
-  font-weight: 600;
+  font-weight: 400;
+}
+input[type="select"] option {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 .filter-name {
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
-label {
-  color: var(--secondary-color);
-}
-form label {
-  display: block;
-  margin-top: 1.5rem;
-}
+
 .select-contact-type {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
 }
 
 .select-contact-type option {
@@ -503,9 +490,18 @@ form label {
   grid-gap: 1rem;
 }
 
-.select-inputs-container label {
+.select-inputs-container label,
+label {
   display: block;
   margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--light-color);
+}
+
+.select-inputs-container select {
+  color: var(--personal-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
 }
 
 .fa-envelope,

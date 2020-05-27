@@ -24,11 +24,6 @@ function Contacts() {
     setIsSorted(e.target.value);
   };
 
-  //check if browser is chrome
-  // const isChrome =
-  //   !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-  // console.log("check is chrome", isChrome);
-
   const sortFilterContacts = contacts
     .sort(function (a, b) {
       return isSorted === "desc"
