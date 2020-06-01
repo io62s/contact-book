@@ -61,7 +61,7 @@ ul {
 }
 
 .text-primary {
-  color: var(--primary-color);
+  color: var(--primary-blue-color);
 }
 
 .text-secondary {
@@ -286,7 +286,7 @@ button {
 }
 
 .form-container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 2rem auto;
   overflow: hidden;
   padding: 0 2rem;
@@ -344,7 +344,6 @@ h3 {
 }
 
 .navbar ul {
-  width: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -450,6 +449,13 @@ h3 {
 .form-wrapp {
   width: 500px;
   margin: 0 auto;
+}
+.form-group {
+  padding: 0;
+}
+
+.form-container h2 {
+  margin-bottom: 3rem;
 }
 .add-form-heading {
   color: var(--primary-blue-color);
