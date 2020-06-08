@@ -300,10 +300,6 @@ h3 {
 
 /* Navbar */
 
-.navbar ul {
-  display: flex;
-}
-
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
@@ -346,7 +342,7 @@ h3 {
 .navbar ul {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .logo-icon {
@@ -559,6 +555,12 @@ label {
   color: var(--darker-color);
 }
 
+.loged-in-name {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-right: 1.5rem;
+  margin-left: 0.3rem;
+}
 /**************TRANSITIONGROUP ANIMATION**************/
 .item-enter {
   opacity: 0;

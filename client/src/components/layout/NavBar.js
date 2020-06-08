@@ -14,10 +14,12 @@ function NavBar({ title, icon }) {
 
   const authLinks = (
     <Fragment>
-      <li>Hello {user && user.name}</li>
+      <li>
+        Hello <span className="loged-in-name">{user && user.name}</span>
+      </li>
       <li>
         <a onClick={handleLogout} href="#!">
-          <i className="fas fa-sign-out-alt"></i>{" "}
+          <i style={{ fontSize: "1rem" }} className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">Logout</span>
         </a>
       </li>
@@ -27,12 +29,14 @@ function NavBar({ title, icon }) {
     <Fragment>
       <li>
         <Link to="/register">
-          <i class="fas fa-user-plus"></i> Register
+          <i style={{ fontSize: "1rem" }} className="fas fa-user-plus"></i>{" "}
+          Register
         </Link>
       </li>
       <li>
         <Link to="/login">
-          <i class="fas fa-sign-in-alt"></i> Login
+          <i style={{ fontSize: "1rem" }} className="fas fa-sign-in-alt"></i>{" "}
+          Login
         </Link>
       </li>
     </Fragment>
