@@ -10,6 +10,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Alerts from "./components/layout/Alerts";
 import setAuthToken from "./utils/setAuthToken";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 import "./App.css";
 
@@ -28,9 +29,7 @@ function App() {
               <div className="container">
                 <Alerts />
                 <Switch>
-                  <Route exact path="/">
-                    <Home />
-                  </Route>
+                  <PrivateRoute exact path="/" component={Home} />
                   <Route exact path="/about">
                     <About />
                   </Route>

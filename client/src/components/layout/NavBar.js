@@ -26,10 +26,14 @@ function NavBar({ title, icon }) {
   const guestLinks = (
     <Fragment>
       <li>
-        <Link to="/register">Register</Link>
+        <Link to="/register">
+          <i class="fas fa-user-plus"></i> Register
+        </Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to="/login">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </Link>
       </li>
     </Fragment>
   );

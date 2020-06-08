@@ -23,7 +23,7 @@ function Login() {
       history.push("/");
     }
     if (error) {
-      setAlert(error.msg, "danger");
+      setAlert(error, "danger");
       clearErrors();
     }
 
