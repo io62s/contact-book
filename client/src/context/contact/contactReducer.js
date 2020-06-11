@@ -27,7 +27,7 @@ export default (state, action) => {
       return {
         ...state,
         contacts: state.contacts.filter(
-          (contact) => contact.id !== action.payload
+          (contact) => contact._id !== action.payload
         ),
         loading: false,
       };
@@ -52,7 +52,7 @@ export default (state, action) => {
       return {
         ...state,
         contacts: state.contacts.map((contact) =>
-          contact.id === action.payload.id
+          contact._id === action.payload._id
             ? Object.assign(contact, action.payload)
             : contact
         ),
