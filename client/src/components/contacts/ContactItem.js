@@ -6,12 +6,12 @@ function ContactItem({ contact }) {
   const contactContext = useContext(ContactContext);
 
   const { deleteContact, setCurrent, clearCurrent } = contactContext;
-  const { id, name, email, phone, type } = contact;
+  const { _id, name, email, phone, type } = contact;
 
   const [expandCard, setExpandCard] = useState(false);
 
   const handleDelete = () => {
-    deleteContact(id);
+    deleteContact(_id);
     clearCurrent();
   };
 

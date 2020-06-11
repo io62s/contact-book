@@ -1,16 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import ContactContext from "../../context/contact/contactContext";
 import ContactItem from "./ContactItem";
 import FilterForm from "./FilterForm";
+import Spinner from "../layout/Spinner";
 
 function Contacts() {
   const contactsContext = useContext(ContactContext);
-  const { contacts } = contactsContext;
+  const { contacts, getContacts, loading } = contactsContext;
 
   const [type, setType] = useState("all");
   const [name, setName] = useState("");
   const [isSorted, setIsSorted] = useState("desc");
+
+  useEffect(() => {
+    getContacts();
+    // eslint-disable-next-line
+  }, []);
 
   const handleSelect = (e) => {
     setType(e.target.value);
@@ -38,7 +44,7 @@ function Contacts() {
       contact.name.toLowerCase().includes(name.toLowerCase())
     );
 
-  if (contacts.length === 0) {
+  if (contacts.length === 0 && !loading) {
     return <h3>Please Add a Contact</h3>;
   }
 
@@ -52,21 +58,33 @@ function Contacts() {
         handleSelect={handleSelect}
         sortContacts={sortContacts}
       />
-      <TransitionGroup>
-        {type === "all"
-          ? sortFilterContacts.map((contact) => (
-              <CSSTransition key={contact.id} timeout={300} classNames="item">
-                <ContactItem contact={contact} />
-              </CSSTransition>
-            ))
-          : sortFilterContacts.map((contact) =>
-              contact.type === type ? (
-                <CSSTransition key={contact.id} timeout={300} classNames="item">
+      {contacts.length !== 0 && !loading ? (
+        <TransitionGroup>
+          {type === "all"
+            ? sortFilterContacts.map((contact) => (
+                <CSSTransition
+                  key={contact._id}
+                  timeout={300}
+                  classNames="item"
+                >
                   <ContactItem contact={contact} />
                 </CSSTransition>
-              ) : null
-            )}
-      </TransitionGroup>
+              ))
+            : sortFilterContacts.map((contact) =>
+                contact.type === type ? (
+                  <CSSTransition
+                    key={contact._id}
+                    timeout={300}
+                    classNames="item"
+                  >
+                    <ContactItem contact={contact} />
+                  </CSSTransition>
+                ) : null
+              )}
+        </TransitionGroup>
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 }
